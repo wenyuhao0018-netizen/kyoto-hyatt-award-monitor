@@ -48,7 +48,7 @@ async function load() {
     status.innerHTML = `<span class="status-icon" aria-hidden="true">${priorityStatus === "available" ? "✓" : priorityStatus === "unavailable" ? "⌕" : "!"}</span><div><strong>${statusCopy[priorityStatus][0]}</strong><p>${detail}</p></div>`;
     document.querySelector("#priority-options").innerHTML = priority.map((item) => `<a href="${item.bookingUrl}" target="_blank" rel="noreferrer"><span>${formatDate(item.checkin)}入住</span><strong>${statusCopy[item.status][1]}${item.points ? ` · ${item.points.toLocaleString("zh-CN")}分` : ""}</strong></a>`).join("");
     document.querySelector("#updated-at").textContent = `更新于 ${formatTime(data.fetchedAt)}`;
-    document.querySelector("#date-count").textContent = regular.length;
+    document.querySelector("#date-count").textContent = results.length;
     const availableCount = regular.filter((item) => item.status === "available").length;
     const summary = document.querySelector("#result-summary");
     summary.hidden = false;
