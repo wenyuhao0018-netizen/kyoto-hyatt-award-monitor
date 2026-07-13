@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1d2a22" />
+    <title>京都柏悦积分房监控</title>
+    <meta name="description" content="手机查看京都柏悦积分兑换房、优先日期和周末节假日状态。" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <div class="brand"><span class="seal">京</span><span>积分房监控中心</span></div>
+        <span class="live"><i></i>每日自动检查</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="shell hero-inner">
+        <div>
+          <p class="eyebrow">PARK HYATT KYOTO</p>
+          <h1>京都柏悦积分房</h1>
+          <p>优先盯住9月25日或26日任意一晚，其他周末和节假日统一收在这里。</p>
+        </div>
+        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2025/07/23/0412/ITMPH-P0980-Garden-View-King-718.jpg/ITMPH-P0980-Garden-View-King-718.16x9.jpg" alt="京都柏悦花园景观客房" />
+      </div>
+    </section>
+
+    <main class="shell content">
+      <section aria-labelledby="priority-title">
+        <div class="section-heading">
+          <div><p class="kicker">最高优先级</p><h2 id="priority-title">9月25日或26日入住</h2></div>
+          <span>任选1晚 · 2位成人</span>
+        </div>
+        <div id="priority-status" class="status loading">
+          <span class="status-icon" aria-hidden="true">⌕</span>
+          <div><strong>正在读取最新结果</strong><p>请稍候</p></div>
+        </div>
+        <div id="priority-options" class="priority-options"></div>
+        <div class="meta"><span id="updated-at">尚未查询</span><span>任意一晚有房即提醒</span></div>
+      </section>
+
+      <section class="schedule" aria-labelledby="schedule-title">
+        <div class="section-heading">
+          <div><p class="kicker">统一日历</p><h2 id="schedule-title">周末与节假日</h2></div>
+          <span aria-hidden="true">▦</span>
+        </div>
+        <div class="summary">
+          <div><strong id="date-count">--</strong><span>个夜晚</span></div>
+          <div><strong>每天1次</strong><span>自动检查频率</span></div>
+          <div><strong>00:00</strong><span>北京时间运行</span></div>
+        </div>
+        <button id="toggle-dates" type="button">查看全部日期</button>
+        <div id="result-summary" class="result-summary" hidden></div>
+        <div id="date-grid" class="date-grid" hidden></div>
+      </section>
+
+      <section class="notice">
+        <span aria-hidden="true">◉</span>
+        <div><h2>只有状态变化才提醒</h2><p>网页每天自动更新；最终库存与积分价格以凯悦确认页为准。</p></div>
+      </section>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
